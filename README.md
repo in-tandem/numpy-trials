@@ -1,0 +1,2 @@
+# numpy-trials
+numpy exercises
