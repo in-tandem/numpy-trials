@@ -75,3 +75,30 @@ print(another_two_d)
 print(another_two_d[:, :-2])
 
 ### part two end: tensor slicing #######
+
+#### part three : broadcasting ######
+
+## we know that operations such as addition are pretty straightforward
+## when shapes match of the two tensors. however what happens when the
+# shapes of tensors do not match. say t1 = (3, 6) and t2 is (6,)
+# what will happen if we try to do t1+t2.
+# well in every case, the operations are element wise operations. in this
+# case we will try to 'broadcast' the lower dimension of the tensor t2 into
+# the same dimension as t1. essentially repeat the 6 elements of t2 3 times
+# to create the 2nd axes and perform an element wise operation
+# this will be clear in the next example
+# caveat would be t1.shape[1] == t2.shape[0] else we will have ambigous broadcasting
+# errror
+
+t1 = np.random.randint(1,2, (3,6)) # we create a 3,6 tensor where every element is 1 
+t2 = np.random.randint(1,2, (6))
+
+t3 = t1 + t2
+assert t1.shape == t3.shape ## lower dimension is broadcast to higher dimension
+
+print(t3) ### expectin all elements to be 2
+assert set([2]) == set(t3.flatten().tolist())
+
+
+
+#### part three end: broadcasting ######
