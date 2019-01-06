@@ -70,9 +70,11 @@ print(two_d_tensor[1:, -2:]) ## in columns, start from 2 columns from the end
 print(two_d_tensor[1:, -3: -1]) ## in columns, start from 2 columns from the end, and take  1 columns 
 
 another_two_d = np.random.randint(1,19, (6, 5))
-print(another_two_d)
+print('another_Two_d:', another_two_d)
 
 print(another_two_d[:, :-2])
+
+print('here:' ,another_two_d[2::2,2::2]) #starts from2nd row.2ndcol and takes every 2 steps in either direction
 
 ### part two end: tensor slicing #######
 
