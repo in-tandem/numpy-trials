@@ -74,6 +74,7 @@ def execute():
     b[0,0] = 777
     assert b[0,0] != a[0,0]
 
-
+    ## creating a identity matrix..ie square matrix with diagonals as 1
+    print(np.eye(3))
 
 execute()
